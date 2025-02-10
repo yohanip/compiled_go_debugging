@@ -1,0 +1,12 @@
+do not use the tasks, they are there just for documentation purposes
+we could use the tasks, but the dlv task will delay the debugging process indefinitely
+
+// this gc flag is required
+go build --trimpath --gcflags="all=-N -l"
+
+// running normally
+dlv exec hello --headless --listen=:4000 --api-version=2 --continue --accept-multiclient
+
+or
+// waiting for debuger connection
+dlv exec hello --headless --listen=:4000 --api-version=2
